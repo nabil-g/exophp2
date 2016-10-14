@@ -1,0 +1,63 @@
+Exo : VROOOMMM VROOOMMM
+
+Tacer la structure générale en php du programme qui gère la distribution
+de carburant d'une pompe à essence automatisée qui ne distribuerait
+que ces trois carburants : Diesel, Super, et GPL ?
+
+Attachez-vous à la logique suivante :
+Telle action de l'utilisateur => telle partie du programme s'enclenche...
+
+
+Distributeur automatique de carburant
+
+//affichage permanent
+affiche 'Merci d'avoir choisi VROOOMMM VROOOMMM !
+Choisissez votre carburant :
+Gazole, SuperSP ou GPL ?';
+
+//réaction quand il y a utilisateur
+Si réponse {
+recueille carburant_choisi;
+affiche 'Entrez votre carte bleue';
+tantque info carte bleue pas entrée{
+affiche 'Entrez votre carte bleue';
+}
+Sinon si info carte bleue entrée {
+affiche 'Entrez votre code';
+tant que code pas entré ou pas bon{
+affiche 'Entrez votre code';
+}
+Sinon si code bon{
+affiche 'Vous pouvez vous servir en ';
+affiche carburant_choisi;
+
+//Pour la suite, initialisation de ma variable nb_litres
+nb_litres=0;
+
+//Réaction quand utilisateur décroche le pistolet
+Si user a décroché robinet{
+
+si réponsechoisie="Gazole"{
+prix_au_litre=1.12;
+}
+sinonsi réponsechoisie="SuperSP"{
+prix_au_litre=1.21;
+}
+//réponsechoisie="GPL", le dernier cas par défaut
+sinon{
+prix_au_litre=0.69;
+}
+tantque robinet coule{
+//le compteur tourne
+nb_litres=nb_litres+1;
+
+prix_temporaire=nb_litre * prix_au_litre;
+affiche prix_temporaire;
+}
+}
+//quand on arrive à cette ligne du programme, user a raccroché le pistolet
+prix_total=prix_temporaire;
+débite le prix total de son compte;
+affiche 'Merci, et à la prochaine fois chez VROOOMMM VROOOMMM !';
+}
+}
